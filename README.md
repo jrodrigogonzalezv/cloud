@@ -1,6 +1,7 @@
 # React Cloud App
 
-App React creada con Vite, TypeScript y Firebase Authentication.
+Web para una consulta psicologica creada con React, Vite, TypeScript y Firebase
+Authentication para el portal de pacientes.
 
 ## Firebase
 
