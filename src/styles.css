@@ -68,34 +68,135 @@ h1 {
   font-size: clamp(1rem, 2vw, 1.2rem);
 }
 
-.actions {
+.auth-panel {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  align-items: center;
   margin-top: 2rem;
 }
 
-.actions a {
+.google-button,
+.secondary-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 3rem;
   padding: 0 1.25rem;
-  border: 1px solid rgba(147, 197, 253, 0.32);
+  border: 0;
   border-radius: 999px;
-  background: rgba(59, 130, 246, 0.18);
-  color: #bfdbfe;
+  font: inherit;
   font-weight: 700;
+  cursor: pointer;
   transition:
     transform 160ms ease,
     background 160ms ease,
-    border-color 160ms ease;
+    border-color 160ms ease,
+    opacity 160ms ease;
 }
 
-.actions a:hover {
+.google-button {
+  gap: 0.75rem;
+  border: 1px solid rgba(147, 197, 253, 0.32);
+  background: rgba(59, 130, 246, 0.18);
+  color: #bfdbfe;
+}
+
+.google-button span {
+  display: inline-grid;
+  width: 1.75rem;
+  height: 1.75rem;
+  place-items: center;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #1f2937;
+  font-weight: 900;
+}
+
+.google-button:hover:not(:disabled) {
   border-color: rgba(147, 197, 253, 0.7);
   background: rgba(59, 130, 246, 0.28);
   transform: translateY(-2px);
+}
+
+.google-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.secondary-button {
+  border: 1px solid rgba(248, 250, 252, 0.18);
+  background: rgba(248, 250, 252, 0.1);
+  color: #f8fafc;
+}
+
+.secondary-button:hover {
+  background: rgba(248, 250, 252, 0.16);
+  transform: translateY(-2px);
+}
+
+.config-warning,
+.error-message,
+.status-text {
+  width: 100%;
+  margin: 0;
+}
+
+.config-warning {
+  padding: 1rem;
+  border: 1px solid rgba(251, 191, 36, 0.38);
+  border-radius: 1rem;
+  background: rgba(251, 191, 36, 0.1);
+  color: #fde68a;
+}
+
+.error-message {
+  color: #fecaca;
+}
+
+.status-text {
+  color: #93c5fd;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.user-card {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid rgba(147, 197, 253, 0.22);
+  border-radius: 1.25rem;
+  background: rgba(15, 23, 42, 0.62);
+}
+
+.user-card img,
+.avatar-fallback {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 999px;
+}
+
+.avatar-fallback {
+  display: inline-grid;
+  place-items: center;
+  background: #60a5fa;
+  color: #0f172a;
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.user-card strong,
+.user-card small {
+  display: block;
+}
+
+.user-card small {
+  color: #cbd5e1;
 }
 
 .feature-grid {
